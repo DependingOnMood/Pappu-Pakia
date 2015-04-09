@@ -1,9 +1,5 @@
 @font-face{ 
 	font-family: 'Happy Sans';
-	src: url('../fonts/happy_sans-webfont.eot');
-	src: url('../fonts/happy_sans-webfont.eot?#iefix') format('embedded-opentype'),
-	     url('../fonts/happy_sans-webfont.woff') format('woff'),
-	     url('../fonts/happy_sans-webfont.ttf') format('truetype'),
 	     url('../fonts/happy_sans-webfont.svg#webfont') format('svg');
 }
 
