@@ -1,7 +1,5 @@
 # Pappu Pakia
 
-## Sharing is Caring <3
-
 ## Game Libraries Used
 
 No Gaming/Physics Libraries/Frameworks used. All Custom Code and Custom Physics.
