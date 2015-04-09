@@ -1,22 +1,6 @@
 # Pappu Pakia
 
-![Pappu Pakia](http://i.imgur.com/zYD37.png)
-
-This HTML5 Game (Pappu Pakia) has been happily made for the
-[Github Game Off 2012](https://github.com/blog/1303-github-game-off).
-
-**[PLAY THE GAME HERE](http://khele.in/pappu-pakia/)**
-
-## Credits
-
-Handsomely coded by [Rishabh](http://twitter.com/_rishabhp).
-Beautiful graphics by [Kushagra](http://twitter.com/solitarydesigns).
-
 ## Sharing is Caring <3
-
-Some tricks and tips that we learnt while making this game has been
-shared on [CodeTheory](http://codetheory.in) and
-[CSSDeck](http://cssdeck.com/codecasts).
 
 ## Game Libraries Used
 
