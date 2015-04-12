@@ -96,6 +96,8 @@ h1, #loadText {
 	width: auto;
 	max-width: 1000px;
 	height: 500px;
+	/*width: 100%;*/
+	/*height: 100%;*/
 }
 
 footer {
