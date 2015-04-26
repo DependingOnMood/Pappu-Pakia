@@ -1,6 +1,6 @@
 
 mit.main = function() {
-
+  //resizeGameAreaService.setWidthToHeight(2);
   // rAF
   window.requestAnimationFrame = function() {
     return window.requestAnimationFrame ||

@@ -23,18 +23,18 @@
 }
 
 #loading #barCont {
-	width: 400px;
-	height: 20px;
+	width: 400%;
+	height: 20%;
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	margin: -10px 0 0 -200px;
+	margin: -10% 0 0 -200%;
 	background: black;
 }
 
 #loading #bar {
 	width: 0;
-	height: 20px;
+	height: 20%;
 	position: absolute;
 	left: 0;
 	background: #F3FF67;
@@ -52,44 +52,44 @@ body {
 h1, #loadText {
 	text-align: center;
 	color: #fff;
-	margin-top: 20px;
+	margin-top: 20%;
 	font-family: 'Happy Sans', cursive;
 }
 
 #loadText {
-	line-height: 380px;
-	font-size: 30px;
+	line-height: 380%;
+	font-size: 30%;
 }
 
 #fps_count {
 	position: absolute;
-	top: 10px;
-	right: 10px;
-	font-size: 20px;
+	top: 0%;
+	right: 0%;
+	font-size: 3vmin;
 	color: white;
 	font-family: 'Happy Sans', cursive;
 }
 
 .gads {
 	text-align: center;
-	max-width: 1000px;
-	margin: 20px auto;
+	max-width: 1000%;
+	margin: 20% auto;
 }
 
 #mute {
-	width: 49px;
-	height: 40px;
+	width: 40%;
+	height: 40%;
 	background: url(../img/mute.png) no-repeat;
 	display: block;
 	text-decoration: none;
 	outline: none;
 	position: absolute;
-	top: 15px;
-	right: 15px;
+	top: 5%;
+	right: -40%;
 	z-index: 15;
 	background-position: 0 0;
 }
-
+/*
 .container {
 	position: relative;
 	margin: 20px auto 50px;
@@ -97,23 +97,32 @@ h1, #loadText {
 	max-width: 1000px;
 	height: 500px;
 	/*width: 100%;*/
-	/*height: 100%;*/
+	/*height: 100%;}    */
+
+
+.container {
+    position: absolute;
+    margin: 0% auto;
+    width: 200%;
+    max-width: 1000%;
+    height: 200%;
 }
 
+
 footer {
-	margin: 20px auto;
-	padding: 0 0 20px;
-	max-width: 1000px;
+	margin: 20% auto;
+	padding: 0 0 20%;
+	max-width: 1000%;
 }
 footer h3 {
 	color: #E7E7E7;
-	margin-top: 30px;
-	font-size: 18px;
-	margin-bottom: 10px;
+	margin-top: 30%;
+	font-size: 18%;
+	margin-bottom: 10%;
 }
 footer p {
-	margin-bottom: 10px;
-	font-size: 13px;
+	margin-bottom: 10%;
+	font-size: 13%;
 	font-weight: normal;
 	color: #D1D1D1;
 }
@@ -139,22 +148,26 @@ canvas#game_main {
   display: block;
   margin: 0 auto;
   position: absolute;
+    width: 50%;
+    height:50%;
 }
 canvas#game_bg {
 	display: block;
 	margin: 0 auto;
 	position: absolute;
+    width: 50%;
+    height:50%;
 }
 
 
 /* Score Board */
 #score_board {
 	position: absolute;
-	top: 0; left: 0; right: 0;
-	padding: 10px;
+	top: -15%; left: -8%; right: 0;
+	padding: 10%;
 	height: 10%;
 	text-align: left;
-	font-size: 30px;
+	font-size: 150%;
 	font-weight: normal;
 	font-family: 'Happy Sans', cursive;
 
@@ -165,13 +178,13 @@ canvas#game_bg {
 }
 
 #invincible_timer {
-	width: 150px;
-	height: 10px;
+	width: 150%;
+	height: 10%;
 	position: absolute;
-	top: 20px;
+	top: 20%;
 	left: 50%;
-	border: 1px solid #fff;
-	margin-left: -75px;
+	border: 1% solid #fff;
+	margin-left: -75%;
 	display: none;
 }
 #invincible_loader {
@@ -196,22 +209,24 @@ canvas#game_bg {
 }
 
 #title {
-	font-size: 67px;
-	line-height: 100px;
+	font-size: 6vmin;
+	line-height: 100%;
 	font-weight: normal;
 	color: #945430;
 	text-align: center;
 	margin: 0;
 	padding: 0;
-	text-shadow: 3px 3px 0px white;
+	/*text-shadow: 3px 3px 0px white;*/
 }
 
 #credits, #high_score, #last_score {
-	font: 36px 'Happy Sans', cursive;
+	font: 3vmin 'Happy Sans', cursive;
 	color: white;
 	padding: 0;
-	text-align: center;
-	margin: -10px 0 10px;
+	text-align: left;
+	/*margin: -10% 0 10%;*/
+    top:50%;
+    left:50%;
 }
 
 #credits a {
@@ -219,20 +234,21 @@ canvas#game_bg {
 	text-decoration: none;
 }
 
+/*
 .options {
-	height: 400px;
-	background-image: url(../img/stand.png);
+	height: 80%;
+	/*background-image: url(../img/stand.png);
 	background-position: bottom center;
-	width: 225px;
+	width: 225%;
 	background-repeat: no-repeat;
 	position: absolute;
 	bottom: 0;
-	right: 50px;
+	right: -100%;
 }
 
 .options:before {
 	content: '';
-	background-image: url(../img/dig.png);
+	/*background-image: url(../img/dig.png);
 	background-repeat: no-repeat;
 	position: absolute;
 	width: 47px;
@@ -241,19 +257,19 @@ canvas#game_bg {
 	left: 50%;
 	margin-left: -27px;
 	z-index: -1;
-}
+}*/
 
 .options ul {
 	margin: 0;
-	padding: 50px 0 0;
+	padding: 50% 0 0;
 	list-style: none;
 }
 
 .options ul li {
 	display: block;
-	font: 40px 'Happy Sans', cursive;
+	font: 40% 'Happy Sans', cursive;
 	text-align: center;
-	margin: 0 0 20px;
+	margin: 0 0 20%;
 }
 
 .options ul li a {
@@ -263,22 +279,23 @@ canvas#game_bg {
 
 .options ul li:first-child {
 	background: url(../img/plank_top.png) no-repeat top center;
-	height: 70px;
-	line-height: 70px;
+	height: 70%;
+	line-height: 70%;
 }
 
 .options ul li:nth-child(2) {
 	background: url(../img/plank_mid.png) no-repeat top center;
-	height: 63px;
-	line-height: 63px;
+	height: 63%;
+	line-height: 63%;
 }
 
 .options ul li:last-child {
 	background: url(../img/plank_bot.png) no-repeat top center;
-	height: 75px;
-	line-height: 75px;
+	height: 75%;
+	line-height: 75%;
 }
 
+/*
 .controls {
 	width: 200px;
 	height: 48px;
@@ -287,6 +304,17 @@ canvas#game_bg {
 	position: absolute;
 	top: 60%; left: 50%;
 	margin-top: -24px; margin-left: -100px;
+}
+*/
+/*
+.controls {
+    width: 200%;
+    height: 48%;
+    /*background: url(../img/controls.png) no-repeat top center;
+    margin: 10% auto;
+    position: absolute;
+    top: 100%; left: 50%;
+    margin-top: -24%; margin-left: -100%;
 }
 
 /* Share Buttons */

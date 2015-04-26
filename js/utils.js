@@ -12,16 +12,20 @@
     return Math.floor(Math.random() * (max - min + 1)) + min;
   };
 
+    utils.random = function() {
+        return (Date.now() % 100) / 100.00
+    }
+
   utils.isInt = function(number) {
     return parseFloat(number) === parseInt(number);
   };
 
   utils.toRadian = function(degree) {
-    return (degree * Math.PI/180);
+    return (degree * 3.1415926/180);
   };
 
   utils.toDegree = function(radian) {
-    return (radian * 180/Math.PI);
+    return (radian * 180/3.1415926);
   };
 
   utils.intersect = function(bounds1, bounds2) {
