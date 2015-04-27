@@ -165,9 +165,14 @@ mit.main = function ($scope, score) {
     mit.score = 0;
     try {
 
-        mit.highScore = JSON.parse(localStorage.getItem("highScore"));
-        if (mit.highScore)
-            ui.high_score.text("High Score: " + mit.highScore);
+    mit.highScore = JSON.parse(localStorage.getItem("highScore"));
+    if (mit.highScore)
+      //ui.high_score.text("High Score: "+ mit.highScore);
+    //console.log("scope high score" + scope.highScore());
+      //var scope = angular.element($("#Ctrl")).scope();
+      var scope = angular.element(document.getElementById("mainCtrl")).scope();
+      //console.log("scope high score" + scope.highScore());
+        ui.high_score.text(scope.highScore()+ mit.highScore);
 
     } catch (e) {
     }
@@ -249,198 +254,203 @@ mit.main = function ($scope, score) {
         if (e.keyCode === 38) {
             mit.ascend();
 
-            e.preventDefault();
-        }
-        // Down
-        if (e.keyCode === 40) {
-            e.preventDefault();
-        }
+      e.preventDefault();
+    }
+    // Down
+    if (e.keyCode === 40) {
+      e.preventDefault();
+    }
 
-        //// Space || Enter
-        //if (e.keyCode === 32 || e.keyCode === 13) {
-        //    gameStart();
-        //
-        //    e.preventDefault();
-        //}
+    // Space || Enter
+    if (e.keyCode === 32 || e.keyCode === 13) {
+      gameStart();
+      
+      e.preventDefault();
+    }
 
-    }, false);
+  }, false);
 
-    window.addEventListener('keyup', function (e) {
+  window.addEventListener('keyup', function(e) {
 
-        if (e.keyCode === 38) {
-            mit.descend();
+    if (e.keyCode === 38) {
+      mit.descend();
 
-            e.preventDefault();
-        }
-    }, false);
-
-
-    /*
-     Performing some game over tasks
-     */
-    mit.gameOver = function () {
-        ui.start_screen.fadeIn();
-
-        // High Score
-        if (mit.score > mit.highScore) {
-            mit.highScore = parseInt(mit.score);
-            localStorage.setItem("highScore", JSON.stringify(parseInt(mit.score)));
-
-            ui.high_score.text("High Score: " + mit.highScore);
-        }
-
-        // Show last_score
-        ui.last_score.text("Last Score: " + parseInt(mit.score));
+      e.preventDefault();
+    }
+  }, false);
 
 
-        ui.start_game.html('re-start');
+  /*
+    Performing some game over tasks
+  */
+  mit.gameOver = function() {
+    ui.start_screen.fadeIn();
 
-        mit.descend();
+    // High Score
+    if (mit.score > mit.highScore) {
+      mit.highScore = parseInt(mit.score);
+      localStorage.setItem("highScore", JSON.stringify(parseInt(mit.score)));
 
-        // Stop background
-        mit.Backgrounds.common_bg_speed = 0;
-        mit.Backgrounds.ground_bg_move_speed = 0;
-        mit.Backgrounds.fps = 0;
+      //ui.high_score.text("High Score: "+ mit.highScore);
+        //var scope = angular.element($("#Ctrl")).scope();
+        var scope = angular.element(document.getElementById("mainCtrl")).scope();
+        ui.high_score.text(scope.highScore()+ mit.highScore);
+    }
 
-        mit.game_over = 1;
-        mit.start_btn_clicked = 0;
+    // Show last_score
+    //ui.last_score.text("Last Score: " + parseInt(mit.score));
+      //var scope = angular.element($("#Ctrl")).scope();
+      var scope = angular.element(document.getElementById("mainCtrl")).scope();
+      ui.last_score.text(scope.lastScore()+ parseInt(mit.score));
 
-        // Pappu if invincible will be no morez
-        mit.Pappu.undoInvincible();
+    ui.start_game.html('re-start');
 
-        // Nuke all clones
-        mit.Pappu.clones.length = 0;
+    mit.descend();
 
-    };
+    // Stop background
+    mit.Backgrounds.common_bg_speed = 0;
+    mit.Backgrounds.ground_bg_move_speed = 0;
+    mit.Backgrounds.fps = 0;
 
-    mit.last_time = new Date();
-    setInterval(function () {
-        mit.ui.fps_count.html(mit.fps.toFixed(0) + ' FPS');
-    }, 1000);
+    mit.game_over = 1;
+    mit.start_btn_clicked = 0;
 
+    // Pappu if invincible will be no morez
+    mit.Pappu.undoInvincible();
 
-    // Initializations
-    mit.Backgrounds.init(ctx);
-    mit.ForkUtils.init();
-    mit.BranchUtils.init();
-    mit.CollectibleUtils.init();
-    mit.Pappu.init();
-    mit.PakiaUtils.init();
+    // Nuke all clones
+    mit.Pappu.clones.length = 0;
 
+  };
 
-    (function renderGame() {
-        window.requestAnimationFrame(renderGame);
-
-        // Draw Backgrounds on BG Canvas
-        mit.Backgrounds.draw(bg_ctx);
-
-        ctx.clearRect(0, 0, W, H);
-
-        // Draw Digs (holds forks)
-        // I am fine without Digs, but Kushagra
-        // just WANTS me to do this extra work :/
-        // mit.ForkUtils.drawDigs(ctx);
-
-        // Draw Grass on Main Canvas
-        // mit.Backgrounds.drawGrass(ctx);
-
-        if (mit.flying_up || !mit.game_started)
-            mit.Pappu.updateFlyFrameCount();
-        else
-            mit.Pappu.updateFlyFrameCount(0);
+  mit.last_time = new Date();
+  setInterval(function() {
+    mit.ui.fps_count.html(mit.fps.toFixed(0) + ' FPS');
+  }, 1000);
 
 
-        // Game over on reaching any boundary
-        if (mit.Pappu.hasReachedBoundary(W, H)) {
-            if (mit.game_over)
-                return;
+  // Initializations
+  mit.Backgrounds.init(ctx);
+  mit.ForkUtils.init();
+  mit.BranchUtils.init();
+  mit.CollectibleUtils.init();
+  mit.Pappu.init();
+  mit.PakiaUtils.init();
 
-            // Performing some game over tasks
-            mit.gameOver();
-            return;
-        }
 
-        //mit.ForkUtils.draw(ctx);
-        //mit.BranchUtils.draw(ctx);
+  (function renderGame() {
+    window.requestAnimationFrame(renderGame);
 
-        //mit.ForkUtils.checkCollision();
+    // Draw Backgrounds on BG Canvas
+    mit.Backgrounds.draw(bg_ctx);
 
-        // Send over Pakias (Enemies)
-        // mit.PakiaUtils.render(ctx);
+    ctx.clearRect(0, 0, W, H);
 
-        // Collectibles
-        // mit.CollectibleUtils.draw(ctx);
+    // Draw Digs (holds forks)
+    // I am fine without Digs, but Kushagra
+    // just WANTS me to do this extra work :/
+    // mit.ForkUtils.drawDigs(ctx);
 
-        // mit.Pappu.createClones(3);
+    // Draw Grass on Main Canvas
+    // mit.Backgrounds.drawGrass(ctx);
 
-        if (mit.game_started) {
+    if (mit.flying_up || !mit.game_started)
+      mit.Pappu.updateFlyFrameCount();
+    else
+      mit.Pappu.updateFlyFrameCount(0);
 
-            // Drawin stuff
-            mit.ForkUtils.draw(ctx);
-            mit.BranchUtils.draw(ctx);
-            mit.CollectibleUtils.draw(ctx);
-            mit.Pappu.drawClones(ctx);
 
-            // Check Collisions with pappu
-            if (!mit.Pappu.invincible) {
-                mit.ForkUtils.checkCollision();
-                mit.BranchUtils.checkCollision();
-                mit.PakiaUtils.checkCollision();
-            }
-            mit.CollectibleUtils.checkCollision();
-            mit.Pappu.checkCloneCollision();
-
-            // Send over Pakias (Enemies)
-            if (mit.score > 199)
-                mit.PakiaUtils.render(ctx);
-
-            // Update score
-            if (!mit.game_over) {
-                mit.score = mit.score += 0.1;
-                ui.score_board.text(parseInt(mit.score));
-            }
-
-            // Acceleration + Gravity
-            // mit.ay = mit.ay + mit.gravity;
-
-            // Velocity
-            if (!mit.game_over) {
-                if (
-                    (mit.vy < mit.v_cap && mit.ay + mit.gravity > 0) ||
-                    (mit.vy > -mit.v_cap && mit.ay + mit.gravity < 0)
-                ) {
-
-                    // console.log(mit.ay);
-                    mit.vy += mit.ay;
-                    mit.vy += mit.gravity;
-                }
-
-                // console.log(vy, ay)
-
-                mit.Pappu.x += mit.vx;
-                mit.Pappu.y += mit.vy;
-
-                if (mit.vy > mit.v_cap) {
-                    mit.vy = mit.v_cap;
-                }
-            }
-            else {
-                // on game over, he's gravity is unstoppable
-                mit.vy += mit.gravity;
-                mit.Pappu.y += mit.vy;
-            }
-
-            mit.Pappu.draw(ctx);
-        }
-        else {
-            mit.Pappu.drawStatic(ctx);
-        }
-
-        // Calculate FPS
-        mit.cur_time = new Date;
-        mit.fps = 1e3 / (mit.cur_time - mit.last_time);
-        mit.last_time = mit.cur_time;
-
+    // Game over on reaching any boundary
+    if (mit.Pappu.hasReachedBoundary(W, H)) {
+      if (mit.game_over)
         return;
-    }());
+
+      // Performing some game over tasks
+      mit.gameOver();
+      return;
+    }
+
+    //mit.ForkUtils.draw(ctx);
+    //mit.BranchUtils.draw(ctx);
+
+    //mit.ForkUtils.checkCollision();
+
+    // Send over Pakias (Enemies)
+    // mit.PakiaUtils.render(ctx);
+
+    // Collectibles
+    // mit.CollectibleUtils.draw(ctx);
+
+    // mit.Pappu.createClones(3);
+
+    if (mit.game_started) {
+
+      // Drawin stuff
+      mit.ForkUtils.draw(ctx);
+      mit.BranchUtils.draw(ctx);
+      mit.CollectibleUtils.draw(ctx);
+      mit.Pappu.drawClones(ctx);
+
+      // Check Collisions with pappu
+      if (!mit.Pappu.invincible) {
+        mit.ForkUtils.checkCollision();
+        mit.BranchUtils.checkCollision();
+        mit.PakiaUtils.checkCollision();
+      }
+      mit.CollectibleUtils.checkCollision();
+      mit.Pappu.checkCloneCollision();
+
+      // Send over Pakias (Enemies)
+      if (mit.score > 199)
+        mit.PakiaUtils.render(ctx);
+
+      // Update score
+      if (!mit.game_over) {
+        mit.score = mit.score += 0.1;
+        ui.score_board.text(parseInt(mit.score));
+      }
+
+      // Acceleration + Gravity
+      // mit.ay = mit.ay + mit.gravity;
+      
+      // Velocity
+      if (!mit.game_over) {
+        if (
+          (mit.vy < mit.v_cap && mit.ay+mit.gravity > 0) ||
+          (mit.vy > -mit.v_cap && mit.ay+mit.gravity < 0)
+          ) {
+
+          // console.log(mit.ay);
+          mit.vy += mit.ay;
+          mit.vy += mit.gravity;
+        }
+
+        // console.log(vy, ay)
+
+        mit.Pappu.x += mit.vx;
+        mit.Pappu.y += mit.vy;
+
+        if (mit.vy > mit.v_cap) {
+          mit.vy = mit.v_cap;
+        }
+      }
+      else {
+        // on game over, he's gravity is unstoppable
+        mit.vy += mit.gravity;
+        mit.Pappu.y += mit.vy;
+      }
+    
+      mit.Pappu.draw(ctx);
+    }
+    else {
+      mit.Pappu.drawStatic(ctx);
+    }
+
+    // Calculate FPS
+    mit.cur_time = new Date;
+    mit.fps = 1e3 / (mit.cur_time - mit.last_time);
+    mit.last_time = mit.cur_time;
+
+    return;
+  }());
 };

@@ -68,7 +68,7 @@ h1, #loadText {
 	position: absolute;
 	top: 0%;
 	right: 0%;
-	font-size: 3vmin;
+	font-size: 2vw;
 	color: white;
 	font-family: 'Happy Sans', cursive;
 }
@@ -173,20 +173,22 @@ canvas#game_bg {
 
 /* Score Board */
 #score_board {
-	position: absolute;
-	top: -15%; left: -8%; right: 0;
-	padding: 10%;
-	height: 10%;
-	text-align: left;
-	font-size: 150%;
-	font-weight: normal;
-	font-family: 'Happy Sans', cursive;
+    position: absolute;
+    top: -14%; left: -8%; right: 0;
+    padding: 10%;
+    height: 10%;
+    text-align: left;
+    font-size: 2vw;
+    font-weight: normal;
+    font-family: 'Happy Sans', cursive;
+    color: white;
 
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-o-user-select: none;
-	user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }
+
 
 /*#invincible_timer {
 	width: 150;
@@ -207,6 +209,7 @@ canvas#game_bg {
     border: 1px solid #fff;
     /*margin-left: -75px;*/
     display: none;
+    visibility:hidden;
 }
 #invincible_loader {
 	width: 100%; height: 100%;
@@ -243,7 +246,7 @@ canvas#game_bg {
 }
 
 #credits, #high_score, #last_score {
-	font: 3vmin 'Happy Sans', cursive;
+	font: 2vw 'Happy Sans', cursive;
 	color: white;
 	padding: 0;
 	text-align: left;

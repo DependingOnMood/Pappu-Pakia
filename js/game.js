@@ -3,10 +3,10 @@
  */
 angular.module('myApp', [])
     .controller('Ctrl',
-    function ($timeout, $rootScope, $scope, $log, realTimeSimpleService, resizeGameAreaService) {
+    function ($timeout, $rootScope, $scope, $log, $translate, realTimeSimpleService, resizeGameAreaService) {
         'use strict';
 
-         console.log('shit1');
+         console.log('s1');
         resizeGameAreaService.setWidthToHeight(2);
 
         $scope.lines = [];
@@ -23,9 +23,9 @@ angular.module('myApp', [])
                 angular.toJson(playersInfo)
             ];
 
-            console.log('shit2');
+            console.log('s2');
             $scope.startGame();
-            console.log('shit3');
+            console.log('s3');
 
             //$timeout(function () {
             //    if (!isOngoing) {
@@ -72,6 +72,22 @@ angular.module('myApp', [])
 
         $scope.startGame = function() { window.gameStart(); }
         $scope.endGame = function() { window.gameOver(); }
+
+
+        $scope.highScore = function () {
+            return $translate("HIGH_SCORE");
+        }
+
+        $scope.lastScore = function () {
+            return $translate("LAST_SCORE");
+        }
+
+
+        /*
+        function highScore () {
+            return $translate("High Score: ");
+        }*/
+
 
 
 
