@@ -1,5 +1,5 @@
-mit.main = function () {
-    //resizeGameAreaService.setWidthToHeight(2);
+mit.main = function ($scope, score) {
+
 
     window.gameStart = function () {
         gameStart()
@@ -151,11 +151,11 @@ mit.main = function () {
         mit.PakiaUtils.cur_pakia = false;
     };
 
-    ui.start_game.on('mousedown', function () {
-        gameStart();
-
-        return false;
-    });
+    //ui.start_game.on('mousedown', function () {
+    //    gameStart();
+    //
+    //    return false;
+    //});
 
 
     // gameStart();
@@ -256,12 +256,12 @@ mit.main = function () {
             e.preventDefault();
         }
 
-        // Space || Enter
-        if (e.keyCode === 32 || e.keyCode === 13) {
-            gameStart();
-
-            e.preventDefault();
-        }
+        //// Space || Enter
+        //if (e.keyCode === 32 || e.keyCode === 13) {
+        //    gameStart();
+        //
+        //    e.preventDefault();
+        //}
 
     }, false);
 
