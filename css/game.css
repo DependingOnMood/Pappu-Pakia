@@ -13,31 +13,34 @@
 
 /* Loading */
 #loading {
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	background: #FF6767;
-	z-index: 10;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #FF6767;
+    z-index: 10;
+    visibility:hidden;
 }
 
 #loading #barCont {
-	width: 400%;
-	height: 20%;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin: -10% 0 0 -200%;
-	background: black;
+    width: 400px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -10px 0 0 -200px;
+    background: black;
+    visibility:hidden;
 }
 
 #loading #bar {
-	width: 0;
-	height: 20%;
-	position: absolute;
-	left: 0;
-	background: #F3FF67;
+    width: 0;
+    height: 20px;
+    position: absolute;
+    left: 0;
+    background: #F3FF67;
+    visibility:hidden;
 }
 
 html, body {
@@ -52,13 +55,13 @@ body {
 h1, #loadText {
 	text-align: center;
 	color: #fff;
-	margin-top: 20%;
+	margin-top: 20px;
 	font-family: 'Happy Sans', cursive;
 }
 
 #loadText {
-	line-height: 380%;
-	font-size: 30%;
+	line-height: 380px;
+	font-size: 30px;
 }
 
 #fps_count {
@@ -72,8 +75,8 @@ h1, #loadText {
 
 .gads {
 	text-align: center;
-	max-width: 1000%;
-	margin: 20% auto;
+	max-width: 1000px;
+	margin: 20px auto;
 }
 
 #mute {
@@ -107,6 +110,14 @@ h1, #loadText {
     max-width: 1000%;
     height: 200%;
 }
+/*
+.container {
+    position: relative;
+    margin: 20px auto 50px;
+    width: auto;
+    max-width: 1000px;
+    height: 500px;
+}*/
 
 
 footer {
@@ -177,8 +188,8 @@ canvas#game_bg {
 	user-select: none;
 }
 
-#invincible_timer {
-	width: 150%;
+/*#invincible_timer {
+	width: 150;
 	height: 10%;
 	position: absolute;
 	top: 20%;
@@ -186,10 +197,22 @@ canvas#game_bg {
 	border: 1% solid #fff;
 	margin-left: -75%;
 	display: none;
+}*/
+#invincible_timer {
+    width: 150px;
+    height: 10px;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    border: 1px solid #fff;
+    /*margin-left: -75px;*/
+    display: none;
 }
 #invincible_loader {
 	width: 100%; height: 100%;
 	background: #FDCF7D;
+    visibility:hidden;
+
 }
 
 

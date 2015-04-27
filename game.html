@@ -1,32 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
+    <!--<meta charset="utf-8">-->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Pappu Pakia</title>
-
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.js"></script>
-    <script src="http://yoav-zibin.github.io/emulator/resizeGameAreaService.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/seedrandom/2.3.11/seedrandom.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 
     <link rel="stylesheet" href="css/game.css">
     <link rel="stylesheet" type="text/css" href="http://yoav-zibin.github.io/emulator/main.css">
 
-    <link rel="stylesheet" type="text/css" href="http://yoav-zibin.github.io/emulator/main.css">
-
-    <script>
-        angular.module('myApp', [])
-                .run(function (
-//                        realTimeSimpleService,
-                        resizeGameAreaService) {
-                    resizeGameAreaService.setWidthToHeight(2);
-                    //window.setRealTimeSimpleService(realTimeSimpleService);
-                });
-    </script>
-
-    <script src="http://yoav-zibin.github.io/emulator/dist/realTimeSimpleServices.min.js"></script>
 </head>
 
-<body ng-cloak ng-app="myApp">
+<body ng-cloak ng-app="myApp" ng-controller="Ctrl">
 <div id="gameArea">
 
     <div class="container">
@@ -42,9 +27,9 @@
             <div class="controls"></div>
 
             <div class="options">
-                <ul>
-                    <li><a href="javascript:void(0);" id="start_game">start</a></li>
-                </ul>
+                <!--<ul>-->
+                    <!--<li><a href="javascript:void(0);" id="start_game">start</a></li>-->
+                <!--</ul>-->
             </div>
         </div>
         <!-- /Start Screen -->
@@ -116,6 +101,16 @@
     <script src="js/pakia.js"></script>
     <script src="js/main.js"></script>
     <script src="js/loader.js"></script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.js"></script>
+
+    <script src="js/game.js"></script>
+
+    <script src="http://yoav-zibin.github.io/emulator/resizeGameAreaService.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/seedrandom/2.3.11/seedrandom.min.js"></script>
+    <script src="http://yoav-zibin.github.io/emulator/dist/realTimeSimpleServices.min.js"></script>
+    <script src="http://yoav-zibin.github.io/emulator/messageService.js"></script>
+
 
 </div>
 </body>

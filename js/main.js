@@ -1,6 +1,9 @@
 
 mit.main = function() {
   //resizeGameAreaService.setWidthToHeight(2);
+
+    window.gameStart = function() {gameStart()};
+    window.gameOver = function() {mit.gameOver()};
   // rAF
   window.requestAnimationFrame = function() {
     return window.requestAnimationFrame ||
@@ -31,6 +34,7 @@ mit.main = function() {
 
   var ui = mit.ui = {
     body: $('body'),
+    gameArea: $('#gameArea'),
     score_board: $('#score_board'),
     last_score: $('#last_score'),
     high_score: $('#high_score'),
@@ -53,6 +57,7 @@ mit.main = function() {
   var W = canvas.width = ui.body.width();
   var H = canvas.height = ui.body.height();
 
+  console.log('w:', W,'h:', H);
   // Width x Height capped to 1000 x 500
   if (canvas.width > 1000) {
     W = canvas.width = 1000;
@@ -60,7 +65,7 @@ mit.main = function() {
   if (canvas.height > 500) {
     H = canvas.height = 500;
   }
-
+  console.log('w:', W,'h:', H);
   // Resizing Width/Height
   if (canvas.height < 500) {
     canvas.width = canvas.height * 1000/500;
@@ -68,6 +73,10 @@ mit.main = function() {
   if (canvas.width < 1000) {
     canvas.height = canvas.width * 500/1000;
   }
+
+  var W = canvas.width;
+  var H = canvas.height;
+  console.log('w:', W,'h:', H);
 
   // BG Canvas
   var bg_canvas = document.querySelector('#game_bg');
@@ -109,7 +118,7 @@ mit.main = function() {
   ui.start_screen.css('height', canvas.height + 'px');
 
   // Start Button
-  var startGame = function() {
+  var gameStart = function() {
     // Play the awesome music! Really awesome
     music.play();
     flap.pause();
@@ -152,14 +161,14 @@ mit.main = function() {
   };
 
   ui.start_game.on('mousedown', function() {
-    startGame();
+    gameStart();
 
     return false;
   });
 
 
 
-  // startGame();
+  // gameStart();
 
 
   // Score Board
@@ -258,7 +267,7 @@ mit.main = function() {
 
     // Space || Enter
     if (e.keyCode === 32 || e.keyCode === 13) {
-      startGame();
+      gameStart();
       
       e.preventDefault();
     }
@@ -443,5 +452,4 @@ mit.main = function() {
 
     return;
   }());
-
 };
