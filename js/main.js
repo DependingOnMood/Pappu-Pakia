@@ -213,15 +213,17 @@ mit.main = function ($scope, score) {
     try {
 
         mit.highScore = JSON.parse(localStorage.getItem("highScore"));
-        if (mit.highScore)
-        //ui.high_score.text("High Score: "+ mit.highScore);
-        //console.log("scope high score" + scope.highScore());
-        //var scope = angular.element($("#Ctrl")).scope();
-            var scope = angular.element(document.getElementById("mainCtrl")).scope();
-        //console.log("scope high score" + scope.highScore());
-        ui.high_score.text(scope.highScore() + mit.highScore);
+        if (mit.highScore) {
+            //ui.high_score.text("High Score: "+ mit.highScore);
+            //console.log("scope high score" + scope.highScore());
+            //var scope = angular.element($("#Ctrl")).scope();
+            //var scope = angular.element(document.getElementById("mainCtrl")).scope();}
+            var scope = angular.element($("#mainCtrl")).scope();
+            ui.high_score.text(scope.highScore() + mit.highScore);
+        }
 
     } catch (e) {
+        console.log("no highscore");
     }
 
     //ui.score_board.css('width', canvas.width + 'px');
