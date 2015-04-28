@@ -69,7 +69,7 @@ h1, #loadText {
 	top: 0%;
 	right: 0%;
 	font-size: 2vw;
-	color: white;
+	/*color: white;*/
 	font-family: 'Happy Sans', cursive;
 }
 
@@ -181,7 +181,7 @@ canvas#game_bg {
     font-size: 2vw;
     font-weight: normal;
     font-family: 'Happy Sans', cursive;
-    color: white;
+    /*color: white;*/
 
     -webkit-user-select: none;
     -moz-user-select: none;

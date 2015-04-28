@@ -83,11 +83,13 @@ mit.main = function ($scope, score) {
         ui.score_board.css('font-size', '4vh');
         ui.last_score.css('font-size', '4vh');
         ui.high_score.css('font-size', '4vh');
+        ui.fps_count.css('font-size', '4vh');
     }
     else {
         ui.score_board.css('font-size', '2vw');
         ui.last_score.css('font-size', '2vw');
         ui.high_score.css('font-size', '2vw');
+        ui.fps_count.css('font-size', '2vw');
     }
     /*
      Basic Canvas Inits
