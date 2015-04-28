@@ -32,6 +32,10 @@ mit.main = function ($scope, score) {
 
     var config = mit.config = {};
 
+    var w = window.innerWidth;
+    var h = window.innerHeight;
+    console.log("width is " + w);
+
     var ui = mit.ui = {
         body: $('body'),
         gameArea: $('#gameArea'),
@@ -45,6 +49,46 @@ mit.main = function ($scope, score) {
         invincible_loader: $('#invincible_loader')
     };
 
+
+    //if (w < 2 * h) {
+    //    var ui = mit.ui = {
+    //        body: $('body'),
+    //        gameArea: $('#gameArea'),
+    //        score_board: $('#score_board'),
+    //        last_score: $('#last_score'),
+    //        high_score: $('#high_score'),
+    //        start_screen: $('#start_screen'),
+    //        start_game: $('#start_game'),
+    //        fps_count: $('#fps_count'),
+    //        invincible_timer: $('#invincible_timer'),
+    //        invincible_loader: $('#invincible_loader')
+    //    };
+    //}
+    //else {
+    //    var ui = mit.ui = {
+    //        body: $('body'),
+    //        gameArea: $('#gameArea'),
+    //        score_board: $('#score_board2'),
+    //        last_score: $('#last_score2'),
+    //        high_score: $('#high_score2'),
+    //        start_screen: $('#start_screen'),
+    //        start_game: $('#start_game'),
+    //        fps_count: $('#fps_count'),
+    //        invincible_timer: $('#invincible_timer'),
+    //        invincible_loader: $('#invincible_loader')
+    //    };
+    //}
+
+    if (w > 2 * h) {
+        ui.score_board.css('font-size', '4vh');
+        ui.last_score.css('font-size', '4vh');
+        ui.high_score.css('font-size', '4vh');
+    }
+    else {
+        ui.score_board.css('font-size', '2vw');
+        ui.last_score.css('font-size', '2vw');
+        ui.high_score.css('font-size', '2vw');
+    }
     /*
      Basic Canvas Inits
      */
@@ -163,6 +207,7 @@ mit.main = function ($scope, score) {
 
     // Score Board
     mit.score = 0;
+    //mit.highScore = JSON.parse(localStorage.getItem("highScore"));
     try {
 
         mit.highScore = JSON.parse(localStorage.getItem("highScore"));
@@ -177,8 +222,8 @@ mit.main = function ($scope, score) {
     } catch (e) {
     }
 
-    ui.score_board.css('width', canvas.width + 'px');
-    ui.score_board.css('height', canvas.height + 'px');
+    //ui.score_board.css('width', canvas.width + 'px');
+    //ui.score_board.css('height', canvas.height + 'px');
 
 
     // Set Canvas Width/Height in Config
@@ -286,10 +331,11 @@ mit.main = function ($scope, score) {
     mit.gameOver = function () {
         ui.start_screen.fadeIn();
 
-        // High Score
-        if (mit.score > mit.highScore) {
-            mit.highScore = parseInt(mit.score);
-            localStorage.setItem("highScore", JSON.stringify(parseInt(mit.score)));
+    // High Score
+      //mit.highScore = JSON.parse(localStorage.getItem("highScore"));
+    if (mit.score > mit.highScore) {
+      mit.highScore = parseInt(mit.score);
+      localStorage.setItem("highScore", JSON.stringify(parseInt(mit.score)));
 
             //ui.high_score.text("High Score: "+ mit.highScore);
             //var scope = angular.element($("#Ctrl")).scope();

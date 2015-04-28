@@ -6,6 +6,7 @@ angular.module('myApp', [])
     function ($timeout, $rootScope, $scope, $log, $translate, realTimeSimpleService, resizeGameAreaService) {
         'use strict';
 
+         console.log('s1');
         resizeGameAreaService.setWidthToHeight(2);
 
         $scope.lines = [];
@@ -92,7 +93,22 @@ angular.module('myApp', [])
             sendEndGame(endMatchScores);
         }
 
+        function randomNumber() {
+            var temp = randomService.randomFromTo(randomCount, 0, 1);
+            $log.info("temp"+temp);
+            randomCount++;
+            return temp;
+        }
 
+        var randomCount = 0;
+        $scope.random = function () {
+            randomNumber();
+            //var temp = randomService.randomFromTo(randomCount, 0, 1);
+            //$log.info("temp"+temp);
+            //randomCount++;
+            //return temp;
+
+        }
 
 
 

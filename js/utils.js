@@ -10,6 +10,9 @@
   */
   utils.randomNumber = function(min, max) {
     //return Math.floor(utils.random() * (max - min + 1)) + min;
+    //return Math.floor(Math.random() * (max - min + 1)) + min;
+      //var scope = angular.element(document.getElementById("mainCtrl")).scope();
+      //return Math.floor(scope.random() * (max - min + 1)) + min;
       return Math.floor(Math.random() * (max - min + 1)) + min;
   };
 
