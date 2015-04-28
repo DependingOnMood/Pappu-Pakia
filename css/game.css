@@ -1,14 +1,15 @@
-@font-face{ 
-	font-family: 'Happy Sans';
-	     url('../fonts/happy_sans-webfont.svg#webfont') format('svg');
+@font-face {
+    font-family: 'Happy Sans';
+url('../fonts/happy_sans-webfont.svg#webfont') format('svg');
 }
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
 * {
-  margin: 0; padding: 0;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 /* Loading */
@@ -31,7 +32,7 @@
     left: 50%;
     margin: -10px 0 0 -200px;
     background: black;
-    visibility:hidden;
+    visibility: hidden;
 }
 
 #loading #bar {
@@ -40,58 +41,60 @@
     position: absolute;
     left: 0;
     background: #F3FF67;
-    visibility:hidden;
+    visibility: hidden;
 }
 
 html, body {
-  width: 100%; height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 body {
-  background: #000 url(http://i.imgur.com/XgUk6.jpg) top center no-repeat fixed;
-  font-family: 'Open Sans', Verdana;
+    background: #000 url(http://i.imgur.com/XgUk6.jpg) top center no-repeat fixed;
+    font-family: 'Open Sans', Verdana;
 }
 
 h1, #loadText {
-	text-align: center;
-	color: #fff;
-	margin-top: 20px;
-	font-family: 'Happy Sans', cursive;
+    text-align: center;
+    color: #fff;
+    margin-top: 20px;
+    font-family: 'Happy Sans', cursive;
 }
 
 #loadText {
-	line-height: 380px;
-	font-size: 30px;
+    line-height: 380px;
+    font-size: 30px;
 }
 
 #fps_count {
-	position: absolute;
-	top: 0%;
-	right: 0%;
-	font-size: 2vw;
-	/*color: white;*/
-	font-family: 'Happy Sans', cursive;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    font-size: 2vw;
+    /*color: white;*/
+    font-family: 'Happy Sans', cursive;
 }
 
 .gads {
-	text-align: center;
-	max-width: 1000px;
-	margin: 20px auto;
+    text-align: center;
+    max-width: 1000px;
+    margin: 20px auto;
 }
 
 #mute {
-	width: 49px;
-	height: 40px;
-	background: url(../img/mute.png) no-repeat;
-	display: block;
-	text-decoration: none;
-	outline: none;
-	position: absolute;
-	top: 10%;
-	right: 0;
-	z-index: 15;
-	background-position: 0 0;
+    width: 49px;
+    height: 40px;
+    background: url(../img/mute.png) no-repeat;
+    display: block;
+    text-decoration: none;
+    outline: none;
+    position: absolute;
+    top: 10%;
+    right: 0;
+    z-index: 15;
+    background-position: 0 0;
 }
+
 /*
 .container {
 	position: relative;
@@ -100,8 +103,7 @@ h1, #loadText {
 	max-width: 1000px;
 	height: 500px;
 	/*width: 100%;*/
-	/*height: 100%;}    */
-
+/*height: 100%;}    */
 
 .container {
     position: absolute;
@@ -110,6 +112,7 @@ h1, #loadText {
     max-width: 1000%;
     height: 100%;
 }
+
 /*
 .container {
     position: relative;
@@ -119,62 +122,69 @@ h1, #loadText {
     height: 500px;
 }*/
 
-
 footer {
-	margin: 20% auto;
-	padding: 0 0 20%;
-	max-width: 1000%;
-}
-footer h3 {
-	color: #E7E7E7;
-	margin-top: 30%;
-	font-size: 18%;
-	margin-bottom: 10%;
-}
-footer p {
-	margin-bottom: 10%;
-	font-size: 13%;
-	font-weight: normal;
-	color: #D1D1D1;
-}
-footer a {
-	text-decoration: none;
-	color: #FF6767;
-}
-footer a:visited {
-	color: #7FFF67;
-}
-footer a:hover {
-	color: #67DBFF;
-}
-footer a:active {
-	color: #F3FF67;
-}
-footer a:focus {
-	color: #FF67ED;
+    margin: 20% auto;
+    padding: 0 0 20%;
+    max-width: 1000%;
 }
 
+footer h3 {
+    color: #E7E7E7;
+    margin-top: 30%;
+    font-size: 18%;
+    margin-bottom: 10%;
+}
+
+footer p {
+    margin-bottom: 10%;
+    font-size: 13%;
+    font-weight: normal;
+    color: #D1D1D1;
+}
+
+footer a {
+    text-decoration: none;
+    color: #FF6767;
+}
+
+footer a:visited {
+    color: #7FFF67;
+}
+
+footer a:hover {
+    color: #67DBFF;
+}
+
+footer a:active {
+    color: #F3FF67;
+}
+
+footer a:focus {
+    color: #FF67ED;
+}
 
 canvas#game_main {
-  display: block;
-  margin: 0 auto;
-  position: absolute;
+    display: block;
+    margin: 0 auto;
+    position: absolute;
     width: 100%;
-    height:100%;
-}
-canvas#game_bg {
-	display: block;
-	margin: 0 auto;
-	position: absolute;
-    width: 100%;
-    height:100%;
+    height: 100%;
 }
 
+canvas#game_bg {
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
 
 /* Score Board */
 #score_board {
     position: absolute;
-    top: 10%; left: 5%; right: 0;
+    top: 11%;
+    left: 0;
+    right: 0;
     padding: 10px;
     height: 10%;
     text-align: left;
@@ -188,7 +198,6 @@ canvas#game_bg {
     -o-user-select: none;
     user-select: none;
 }
-
 
 /*#invincible_timer {
 	width: 150;
@@ -209,55 +218,56 @@ canvas#game_bg {
     border: 1px solid #fff;
     /*margin-left: -75px;*/
     display: none;
-    visibility:hidden;
+    visibility: hidden;
 }
+
 #invincible_loader {
-	width: 100%; height: 100%;
-	background: #FDCF7D;
-    visibility:hidden;
+    width: 100%;
+    height: 100%;
+    background: #FDCF7D;
+    visibility: hidden;
 
 }
-
 
 /* Start Screen */
 #start_screen {
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 100%;
-	z-index: 1;
-	width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 1;
+    width: 100%;
 
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-o-user-select: none;
-	user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }
 
 #title {
-	font-size: 6vmin;
-	line-height: 100%;
-	font-weight: normal;
-	color: #945430;
-	text-align: center;
-	margin: 0;
-	padding: 0;
-	/*text-shadow: 3px 3px 0px white;*/
+    font-size: 6vmin;
+    line-height: 100%;
+    font-weight: normal;
+    color: #945430;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    /*text-shadow: 3px 3px 0px white;*/
 }
 
 #credits, #high_score, #last_score {
-	font: 2vw 'Happy Sans', cursive;
-	/*color: white;*/
-	padding: 0;
-	text-align: left;
-	/*margin: -10% 0 10%;*/
-    top:50%;
-    left:50%;
+    font: 2vw 'Happy Sans', cursive;
+    /*color: white;*/
+    padding: 0;
+    text-align: left;
+    /*margin: -10% 0 10%;*/
+    top: 50%;
+    left: 50%;
 }
 
 #credits a {
-	color: #FFEEAA;
-	text-decoration: none;
+    color: #FFEEAA;
+    text-decoration: none;
 }
 
 /*
@@ -286,39 +296,39 @@ canvas#game_bg {
 }*/
 
 .options ul {
-	margin: 0;
-	padding: 50% 0 0;
-	list-style: none;
+    margin: 0;
+    padding: 50% 0 0;
+    list-style: none;
 }
 
 .options ul li {
-	display: block;
-	font: 40% 'Happy Sans', cursive;
-	text-align: center;
-	margin: 0 0 20%;
+    display: block;
+    font: 40% 'Happy Sans', cursive;
+    text-align: center;
+    margin: 0 0 20%;
 }
 
 .options ul li a {
-	color: #FFEEAA;
-	text-decoration: none;
+    color: #FFEEAA;
+    text-decoration: none;
 }
 
 .options ul li:first-child {
-	background: url(../img/plank_top.png) no-repeat top center;
-	height: 70%;
-	line-height: 70%;
+    background: url(../img/plank_top.png) no-repeat top center;
+    height: 70%;
+    line-height: 70%;
 }
 
 .options ul li:nth-child(2) {
-	background: url(../img/plank_mid.png) no-repeat top center;
-	height: 63%;
-	line-height: 63%;
+    background: url(../img/plank_mid.png) no-repeat top center;
+    height: 63%;
+    line-height: 63%;
 }
 
 .options ul li:last-child {
-	background: url(../img/plank_bot.png) no-repeat top center;
-	height: 75%;
-	line-height: 75%;
+    background: url(../img/plank_bot.png) no-repeat top center;
+    height: 75%;
+    line-height: 75%;
 }
 
 /*
@@ -345,40 +355,40 @@ canvas#game_bg {
 
 /* Share Buttons */
 #share_btns {
-	max-width: 420px;
-	overflow: hidden;
-	margin: 0 auto;
+    max-width: 420px;
+    overflow: hidden;
+    margin: 0 auto;
 }
 
 .share-button {
-	float: left;
-	margin-right: 10px;
+    float: left;
+    margin-right: 10px;
 }
 
 #disqus_thread {
-	max-width: 1000px;
-	margin: 0 auto;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 #disqus_thread a {
-	color: red;
+    color: red;
 }
 
-div.comments-button a, div.chrome-button  a{
-  background-color: #52a8e8;
-  background-image: -webkit-linear-gradient(top, #52a8e8, #377ad0);
-  background-image: -moz-linear-gradient(top, #52a8e8, #377ad0);
-  background-image: -ms-linear-gradient(top, #52a8e8, #377ad0);
-  background-image: -o-linear-gradient(top, #52a8e8, #377ad0);
-  background-image: linear-gradient(top, #52a8e8, #377ad0);
-  color: #fff;
-  font: normal 11px "open sans", sans-serif;
-  line-height: 1;
-  padding: 3px 5px;
-  text-align: center;
-  text-decoration: none;
-  width: 112px;
-  border-radius: 3px;
+div.comments-button a, div.chrome-button a {
+    background-color: #52a8e8;
+    background-image: -webkit-linear-gradient(top, #52a8e8, #377ad0);
+    background-image: -moz-linear-gradient(top, #52a8e8, #377ad0);
+    background-image: -ms-linear-gradient(top, #52a8e8, #377ad0);
+    background-image: -o-linear-gradient(top, #52a8e8, #377ad0);
+    background-image: linear-gradient(top, #52a8e8, #377ad0);
+    color: #fff;
+    font: normal 11px "open sans", sans-serif;
+    line-height: 1;
+    padding: 3px 5px;
+    text-align: center;
+    text-decoration: none;
+    width: 112px;
+    border-radius: 3px;
 }
 
 div.comments-button a:hover {
@@ -392,22 +402,22 @@ div.comments-button a:hover {
 }
 
 div.chrome-button {
-	float: none;
-	display: block;
-	margin: 0 auto;
-	width: 200px;
+    float: none;
+    display: block;
+    margin: 0 auto;
+    width: 200px;
 }
 
 div.chrome-button a {
-	width: 200px;
-	display: block;
-	margin: 20px auto;
-	font-size: 13px;
-	padding: 10px;
-	background-image: -webkit-linear-gradient(top, #5587da, #4d7cd6);
-	background-image: -moz-linear-gradient(top, #5587da, #4d7cd6);
-	background-image: -ms-linear-gradient(top, #5587da, #4d7cd6);
-	background-image: -o-linear-gradient(top, #5587da, #4d7cd6);
-	background-image: linear-gradient(top, #5587da, #4d7cd6);
-	box-shadow: inset 0px 2px 0px rgba(255, 255, 255, 0.4);
+    width: 200px;
+    display: block;
+    margin: 20px auto;
+    font-size: 13px;
+    padding: 10px;
+    background-image: -webkit-linear-gradient(top, #5587da, #4d7cd6);
+    background-image: -moz-linear-gradient(top, #5587da, #4d7cd6);
+    background-image: -ms-linear-gradient(top, #5587da, #4d7cd6);
+    background-image: -o-linear-gradient(top, #5587da, #4d7cd6);
+    background-image: linear-gradient(top, #5587da, #4d7cd6);
+    box-shadow: inset 0px 2px 0px rgba(255, 255, 255, 0.4);
 }

@@ -209,7 +209,6 @@ mit.main = function ($scope, score) {
 
     // Score Board
     mit.score = 0;
-    //mit.highScore = JSON.parse(localStorage.getItem("highScore"));
     try {
 
         mit.highScore = JSON.parse(localStorage.getItem("highScore"));
@@ -336,7 +335,6 @@ mit.main = function ($scope, score) {
         ui.start_screen.fadeIn();
 
     // High Score
-      //mit.highScore = JSON.parse(localStorage.getItem("highScore"));
     if (mit.score > mit.highScore) {
       mit.highScore = parseInt(mit.score);
       localStorage.setItem("highScore", JSON.stringify(parseInt(mit.score)));

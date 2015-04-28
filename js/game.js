@@ -6,7 +6,6 @@ angular.module('myApp', [])
     function ($timeout, $rootScope, $scope, $log, $translate, realTimeSimpleService, resizeGameAreaService) {
         'use strict';
 
-         console.log('s1');
         resizeGameAreaService.setWidthToHeight(2);
 
         $scope.lines = [];
@@ -69,12 +68,14 @@ angular.module('myApp', [])
             gotEndMatch: gotEndMatch
         });
 
-        function sendEndGame(endMatchScores){
+        function sendEndGame(endMatchScores) {
             console.log("sending endMatch")
             realTimeSimpleService.endMatch(endMatchScores);
         }
 
-        $scope.startGame = function() { window.gameStart(); }
+        $scope.startGame = function () {
+            window.gameStart();
+        }
 
 
         $scope.highScore = function () {
@@ -85,7 +86,7 @@ angular.module('myApp', [])
             return $translate("LAST_SCORE");
         }
 
-        $scope.endGame = function (endMatchScores){
+        $scope.endGame = function (endMatchScores) {
             gotEndMatch(endMatchScores)
         }
 
@@ -95,7 +96,7 @@ angular.module('myApp', [])
 
         function randomNumber() {
             var temp = randomService.randomFromTo(randomCount, 0, 1);
-            $log.info("temp"+temp);
+            $log.info("temp" + temp);
             randomCount++;
             return temp;
         }
@@ -109,7 +110,6 @@ angular.module('myApp', [])
             //return temp;
 
         }
-
 
 
     });
