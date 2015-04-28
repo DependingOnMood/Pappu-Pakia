@@ -71,7 +71,7 @@ angular.module('myApp', [])
         });
 
         $scope.startGame = function() { window.gameStart(); }
-        $scope.endGame = function() { window.gameOver(); }
+        //$scope.endGame = function() { window.gameOver(); }
 
 
         $scope.highScore = function () {
@@ -81,6 +81,8 @@ angular.module('myApp', [])
         $scope.lastScore = function () {
             return $translate("LAST_SCORE");
         }
+
+        $scope.endGame = function (endMatchScores){gotEndMatch(endMatchScores)}
 
 
         /*
