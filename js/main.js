@@ -261,12 +261,12 @@ mit.main = function ($scope, score) {
       e.preventDefault();
     }
 
-    // Space || Enter
-    if (e.keyCode === 32 || e.keyCode === 13) {
-      gameStart();
-      
-      e.preventDefault();
-    }
+    //// Space || Enter
+    //if (e.keyCode === 32 || e.keyCode === 13) {
+    //  gameStart();
+    //
+    //  e.preventDefault();
+    //}
 
   }, false);
 
