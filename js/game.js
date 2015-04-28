@@ -6,7 +6,6 @@ angular.module('myApp', [])
     function ($timeout, $rootScope, $scope, $log, $translate, realTimeSimpleService, resizeGameAreaService) {
         'use strict';
 
-         console.log('s1');
         resizeGameAreaService.setWidthToHeight(2);
 
         $scope.lines = [];
@@ -23,9 +22,8 @@ angular.module('myApp', [])
                 angular.toJson(playersInfo)
             ];
 
-            console.log('s2');
             $scope.startGame();
-            console.log('s3');
+            console.log('GameStarted');
 
             //$timeout(function () {
             //    if (!isOngoing) {
@@ -70,8 +68,12 @@ angular.module('myApp', [])
             gotEndMatch: gotEndMatch
         });
 
+        function sendEndGame(endMatchScores){
+            console.log("sending endMatch")
+            realTimeSimpleService.endMatch(endMatchScores);
+        }
+
         $scope.startGame = function() { window.gameStart(); }
-        //$scope.endGame = function() { window.gameOver(); }
 
 
         $scope.highScore = function () {
@@ -82,13 +84,14 @@ angular.module('myApp', [])
             return $translate("LAST_SCORE");
         }
 
-        $scope.endGame = function (endMatchScores){gotEndMatch(endMatchScores)}
+        $scope.endGame = function (endMatchScores){
+            gotEndMatch(endMatchScores)
+        }
 
+        $scope.sendEndGame = function (endMatchScores) {
+            sendEndGame(endMatchScores);
+        }
 
-        /*
-        function highScore () {
-            return $translate("High Score: ");
-        }*/
 
 
 

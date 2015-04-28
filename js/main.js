@@ -1,12 +1,11 @@
 mit.main = function ($scope, score) {
 
+    var gameEnded; //make sure only cal gameEnd once
 
     window.gameStart = function () {
         gameStart()
     };
-    //window.gameOver = function () {
-    //    mit.gameOver()
-    //};
+
     // rAF
     window.requestAnimationFrame = function () {
         return window.requestAnimationFrame ||
@@ -108,6 +107,7 @@ mit.main = function ($scope, score) {
 
     // Start Button
     var gameStart = function () {
+        gameEnded = 0;
         // Play the awesome music! Really awesome
         music.play();
         flap.pause();
@@ -321,7 +321,14 @@ mit.main = function ($scope, score) {
         // Nuke all clones
         mit.Pappu.clones.length = 0;
 
-        scope.endGame(parseInt(mit.score));
+        if (gameEnded === 0) {
+            //endMatch Callback
+            var endMatchScores = [];
+            endMatchScores.push(parseInt(mit.score));
+            scope.endGame(parseInt(mit.score));
+            scope.sendEndGame(endMatchScores);
+            gameEnded =1;
+        }
     };
 
     mit.last_time = new Date();

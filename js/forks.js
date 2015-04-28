@@ -301,7 +301,7 @@
       var pappu_bounds = mit.Pappu.getBounds(),
           // Get Nearest Fork's Handle's Bounds
           fork_bounds = first_fork.getHandleBounds();
-      
+
       // Check whether pappu collided with the
       // fork handle or not.
       if (utils.intersect(pappu_bounds, fork_bounds)) {
