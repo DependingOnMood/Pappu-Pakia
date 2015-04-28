@@ -87,8 +87,8 @@ h1, #loadText {
 	text-decoration: none;
 	outline: none;
 	position: absolute;
-	top: 15px;
-	right: 15px;
+	top: 10%;
+	right: 0;
 	z-index: 15;
 	background-position: 0 0;
 }
