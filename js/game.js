@@ -1,10 +1,10 @@
 /**
  * Created by Dongbo on 4/26/15.
  */
-angular.module('myApp', [])
+angular.module('myApp', ['ngTouch', 'ui.bootstrap'])
     .controller('Ctrl',
-    ['$timeout', '$rootScope', '$scope', '$log', '$translate', 'realTimeSimpleService', 'resizeGameAreaService',
-    function ($timeout, $rootScope, $scope, $log, $translate, realTimeSimpleService, resizeGameAreaService) {
+    ['$timeout', '$rootScope', '$scope', '$log', '$translate', 'realTimeSimpleService', 'resizeGameAreaService','randomService',
+    function ($timeout, $rootScope, $scope, $log, $translate, realTimeSimpleService, resizeGameAreaService, randomService) {
         'use strict';
 
         resizeGameAreaService.setWidthToHeight(2);
@@ -95,16 +95,22 @@ angular.module('myApp', [])
             sendEndGame(endMatchScores);
         }
 
-        function randomNumber() {
-            var temp = randomService.randomFromTo(randomCount, 0, 1);
-            $log.info("temp" + temp);
-            randomCount++;
-            return temp;
-        }
+
+
+        //function randomNumber() {
+        //    var temp = randomService.random(randomCount);
+        //    //$log.info("temp" + temp);
+        //    randomCount++;
+        //    return temp;
+        //}
 
         var randomCount = 0;
         $scope.random = function () {
-            randomNumber();
+            //randomNumber();
+            var temp = randomService.random(randomCount);
+            //$log.info("temp" + temp);
+            randomCount++;
+            return temp;
             //var temp = randomService.randomFromTo(randomCount, 0, 1);
             //$log.info("temp"+temp);
             //randomCount++;

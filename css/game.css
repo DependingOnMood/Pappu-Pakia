@@ -182,10 +182,10 @@ canvas#game_bg {
 /* Score Board */
 #score_board {
     position: absolute;
-    top: 11%;
+    top: 0.1%;
     left: 0;
     right: 0;
-    padding: 10px;
+    padding: 9%;
     height: 10%;
     text-align: left;
     font-size: 2vw;
@@ -255,15 +255,58 @@ canvas#game_bg {
     /*text-shadow: 3px 3px 0px white;*/
 }
 
-#credits, #high_score, #last_score {
-    font: 2vw 'Happy Sans', cursive;
+#credits, #high_score {
+    /*font: 2vw 'Happy Sans', cursive;*/
     /*color: white;*/
-    padding: 0;
-    text-align: left;
+    /*padding: 0;*/
+    /*text-align: left;*/
     /*margin: -10% 0 10%;*/
-    top: 50%;
-    left: 50%;
+    /*top: 50%;*/
+    /*left: 0;*/
+    /*right:0;*/
+
+
+
+    position: absolute;
+    top: 0.1%;
+    left: 5%;
+    right: 10%;
+    padding: 3%;
+    height: 10%;
+    text-align: left;
+    font-size: 2vw;
+    font-weight: normal;
+    font-family: 'Happy Sans', cursive;
 }
+
+
+
+#last_score {
+    /*font: 2vw 'Happy Sans', cursive;*/
+    /*color: white;*/
+    /*padding: 0;*/
+    /*text-align: left;*/
+    /*margin: -10% 0 10%;*/
+    /*top: 50%;*/
+    /*left: 0;*/
+    /*right:0;*/
+
+
+
+    position: absolute;
+    top: 0.01%;
+    left: 8%;
+    right: 10%;
+    padding: 0.02%;
+    height: 10%;
+    text-align: left;
+    font-size: 2vw;
+    font-weight: normal;
+    font-family: 'Happy Sans', cursive;
+}
+
+
+
 
 #credits a {
     color: #FFEEAA;
@@ -420,4 +463,35 @@ div.chrome-button a {
     background-image: -o-linear-gradient(top, #5587da, #4d7cd6);
     background-image: linear-gradient(top, #5587da, #4d7cd6);
     box-shadow: inset 0px 2px 0px rgba(255, 255, 255, 0.4);
+}
+
+
+.carousel-indicators li {
+    background-color: black;
+}
+.carousel-indicators .active {
+    background-color: green;
+}
+td {
+    padding:0 5px 0 5px;
+}
+.modal-dialog {
+    z-index: 1001;
+}
+.overlayModal {
+    text-align:center;
+    z-index: 1000;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width:100%;
+    height:100%;
+}
+.modal-backdrop {
+    z-index: 1000;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width:100%;
+    height:100%;
 }

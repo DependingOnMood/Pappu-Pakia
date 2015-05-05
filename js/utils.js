@@ -13,7 +13,10 @@
         //return Math.floor(Math.random() * (max - min + 1)) + min;
         //var scope = angular.element(document.getElementById("mainCtrl")).scope();
         //return Math.floor(scope.random() * (max - min + 1)) + min;
-        return Math.floor(Math.random() * (max - min + 1)) + min;
+        //return Math.floor(Math.random() * (max - min + 1)) + min;
+        var scope = angular.element($("#mainCtrl")).scope();
+        return Math.floor(scope.random() * (max - min + 1)) + min;
+        //scope.random
     };
 
     utils.random = function () {
