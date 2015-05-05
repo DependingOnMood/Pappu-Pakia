@@ -95,10 +95,12 @@ module.exports = function (grunt) {
                         'http://cdnjs.cloudflare.com/ajax/libs/seedrandom/2.3.11/seedrandom.min.js',
                         'http://yoav-zibin.github.io/emulator/main.css',
                         'dist/controller.min.js',
-                        //"http://yoav-zibin.github.io/emulator/resizeGameAreaService.js",
-                        //"http://yoav-zibin.github.io/emulator/dist/realTimeSimpleServices.min.js",
-                        //"http://yoav-zibin.github.io/emulator/messageService.js",
-                        //"http://yoav-zibin.github.io/emulator/angular-translate/angular-translate.min.js",
+                        'http://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-touch.min.js',
+                        'http://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.1/ui-bootstrap-tpls.min.js',
+                        'http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css',
+                        'http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/fonts/glyphicons-halflings-regular.woff',
+                        'http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/fonts/glyphicons-halflings-regular.ttf',
+                        'http://yoav-zibin.github.io/emulator/dist/realTimeSimpleServices.2.min.js',
                         "http://code.jquery.com/jquery-1.8.2.min.js",
                         "js/utils.js",
                         "js/backgrounds.js",
@@ -151,7 +153,10 @@ module.exports = function (grunt) {
                         'sound/pappu-pakia2.3.mp3',
                         'sound/pappu-pakia2.3.ogg',
                         'sound/ting.mp3',
-                        'sound/ting.ogg'
+                        'sound/ting.ogg',
+                        "imgs/HelpSlide1.png",
+                        "imgs/HelpSlide2.png",
+                        "imgs/HelpSlide3.png"
                     ],
                     network: ['dist/controller.min.js.map', 'dist/controller.js'],
                     timestamp: true
