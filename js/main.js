@@ -255,8 +255,8 @@ mit.main = function ($scope, score) {
     mit.flying_up = 0;
 
     mit.ascend = function () {
-        if (!mit.start_btn_clicked)
-            return;
+        //if (!mit.start_btn_clicked)
+        //    return;
 
         if (!mit.game_started) {
             mit.game_started = 1;
@@ -268,8 +268,8 @@ mit.main = function ($scope, score) {
     };
 
     mit.descend = function () {
-        if (!mit.start_btn_clicked)
-            return;
+        //if (!mit.start_btn_clicked)
+        //    return;
 
         mit.ay = 0;
         mit.flying_up = 0;
@@ -277,20 +277,25 @@ mit.main = function ($scope, score) {
 
     // Game play on mouse clicks too!
     window.addEventListener('mousedown', function (e) {
+        console.log("touchstart");
+
         mit.ascend();
     }, false);
 
     window.addEventListener('mouseup', function (e) {
+        console.log("mouseup");
         mit.descend();
     }, false);
 
 
     // Game play on touch too!
     window.addEventListener('touchstart', function (e) {
+        console.log("touchstart");
         mit.ascend();
     }, false);
 
     window.addEventListener('touchend', function (e) {
+        console.log("touchstart");
         mit.descend();
     }, false);
 
@@ -298,6 +303,8 @@ mit.main = function ($scope, score) {
     // ... and keyzz...
     window.addEventListener('keydown', function (e) {
 
+
+        console.log("keydown");
         // Up
         if (e.keyCode === 38) {
             mit.ascend();
@@ -320,6 +327,7 @@ mit.main = function ($scope, score) {
 
     window.addEventListener('keyup', function (e) {
 
+        console.log("keyup");
         if (e.keyCode === 38) {
             mit.descend();
 
