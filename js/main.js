@@ -385,7 +385,7 @@ mit.main = function ($scope, score) {
         if (gameEnded === 0) {
             //endMatch Callback
             //var endMatchScores = [];
-            var endMatchScores = [3];
+            var endMatchScores = [];
             endMatchScores.push(parseInt(mit.score));
             scope.endGame(endMatchScores);
             scope.sendEndGame(endMatchScores);
