@@ -197,8 +197,9 @@ mit.main = function ($scope, score) {
         mit.PakiaUtils.pakias = [];
         mit.PakiaUtils.cur_pakia = false;
 
-        //mit.ascend();
-        //mit.descend();
+        //auto start
+        mit.ascend();
+        mit.descend();
 
     };
 
@@ -282,7 +283,7 @@ mit.main = function ($scope, score) {
 
     // Game play on mouse clicks too!
     window.addEventListener('mousedown', function (e) {
-        console.log("touchstart");
+        console.log("mousedown");
 
         mit.ascend();
     }, false);
@@ -300,12 +301,12 @@ mit.main = function ($scope, score) {
     }, false);
 
     window.addEventListener('touchend', function (e) {
-        console.log("touchstart");
+        console.log("touchend");
         mit.descend();
     }, false);
 
 
-    // ... and keyzz...
+    //// ... and keyzz...
     window.addEventListener('keydown', function (e) {
 
 

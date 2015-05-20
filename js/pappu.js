@@ -70,7 +70,7 @@
         draw: function (ctx) {
             var scope = angular.element(document.getElementById("mainCtrl")).scope();
             var pappuImg = scope.getPlayerImage();
-            console.log("pappuImg:", pappuImg);
+            //console.log("pappuImg:", pappuImg);
             if (pappuImg === "pappu0.png"){this.sprite= mit.image.pappu0;}
             else if (pappuImg === "pappu1.png"){this.sprite= mit.image.pappu1;}
             else if (pappuImg === "pappu2.png"){this.sprite= mit.image.pappu2;}

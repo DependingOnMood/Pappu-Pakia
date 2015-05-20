@@ -100,7 +100,7 @@ angular.module('myApp', ['ngTouch', 'ui.bootstrap'])
         }
 
         $scope.getPlayerImage = function (){
-            console.log("getPlayerImage", yourPlayerImage);
+            //console.log("getPlayerImage", yourPlayerImage);
             return yourPlayerImage;
         }
 
