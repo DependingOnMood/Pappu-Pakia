@@ -3,7 +3,7 @@ mit.main = function ($scope, score) {
     var gameEnded; //make sure only cal gameEnd once
 
     window.gameStart = function () {
-        gameStart()
+        gameStart();
     };
 
     // rAF

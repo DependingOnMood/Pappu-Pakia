@@ -81,12 +81,6 @@ angular.module('myApp', ['ngTouch', 'ui.bootstrap'])
             //$scope.lines.push("end match scores=" + endMatchScores);
         }
 
-        realTimeSimpleService.init({
-            gotStartMatch: gotStartMatch,
-            gotMessage: gotMessage,
-            gotEndMatch: gotEndMatch
-        });
-
         function sendEndGame(finalEndMatchScores) {
             console.log("sending endMatch:", finalEndMatchScores);
             realTimeSimpleService.endMatch(finalEndMatchScores);
@@ -149,5 +143,10 @@ angular.module('myApp', ['ngTouch', 'ui.bootstrap'])
 
         }
 
+        realTimeSimpleService.init({
+            gotStartMatch: gotStartMatch,
+            gotMessage: gotMessage,
+            gotEndMatch: gotEndMatch
+        });
 
     }]);
