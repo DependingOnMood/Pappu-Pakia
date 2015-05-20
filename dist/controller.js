@@ -12,12 +12,23 @@ angular.module('myApp', ['ngTouch', 'ui.bootstrap'])
         $scope.lines = [];
         var isOngoing = false;
         var yourPlayerImage;//image name for different player
+        var numOfPlayers;
+        var finalEndMatchScores = [];
+        var playerIndex;
 
         function gotStartMatch(params) {
             $log.info("gotStartMatch:", params);
             isOngoing = true;
             var yourPlayerIndex = params.yourPlayerIndex;
             var playersInfo = params.playersInfo;
+
+            numOfPlayers = playersInfo.length;
+            playerIndex = yourPlayerIndex;
+            finalEndMatchScores = [];
+
+            for (var i = 0; i <= numOfPlayers - 1; i++){
+                finalEndMatchScores.push(0);
+            }
 
             yourPlayerImage = "pappu"+yourPlayerIndex+".png";
 
@@ -30,41 +41,44 @@ angular.module('myApp', ['ngTouch', 'ui.bootstrap'])
             $scope.startGame();
             console.log('GameStarted');
 
-            //$timeout(function () {
-            //    if (!isOngoing) {
-            //        return;
-            //    }
-            //    realTimeSimpleService.sendReliableMessage('Reliable');
-            //    $timeout(function () {
-            //        if (!isOngoing) {
-            //            return;
-            //        }
-            //        realTimeSimpleService.sendUnreliableMessage('Unreliable');
-            //        $timeout(function () {
-            //            if (!isOngoing) {
-            //                return;
-            //            }
-            //            var endMatchScores = [];
-            //            for (var i = 0; i < playersInfo.length; i++) {
-            //                endMatchScores.push(42 + i);
-            //            }
-            //            realTimeSimpleService.endMatch(endMatchScores);
-            //        }, 1000);
-            //    }, 1000);
-            //}, 1000);
+        //    $timeout(function () {
+        //        if (!isOngoing) {
+        //            return;
+        //        }
+        //        realTimeSimpleService.sendReliableMessage('Reliable');
+        //        $timeout(function () {
+        //            if (!isOngoing) {
+        //                return;
+        //            }
+        //            realTimeSimpleService.sendUnreliableMessage('Unreliable');
+        //            $timeout(function () {
+        //                if (!isOngoing) {
+        //                    return;
+        //                }
+        //                var endMatchScores = [];
+        //                for (var i = 0; i < playersInfo.length; i++) {
+        //                    endMatchScores.push(42 + i);
+        //                }
+        //                realTimeSimpleService.endMatch(endMatchScores);
+        //            }, 1000);
+        //        }, 1000);
+        //    }, 1000);
+
         }
 
         function gotMessage(params) {
             $log.info("gotMessage:", params);
             var fromPlayerIndex = params.fromPlayerIndex;
             var message = params.message;
-            $scope.lines.push("msg=" + message + " from " + fromPlayerIndex);
+            finalEndMatchScores = message.split(',').map(Number);
+            console.log("finalEndMatchScores in gotMessage:",finalEndMatchScores);
+            //$scope.lines.push("msg=" + message + " from " + fromPlayerIndex);
         }
 
         function gotEndMatch(endMatchScores) {
             $log.info("gotEndMatch:", endMatchScores);
             isOngoing = false;
-            $scope.lines.push("end match scores=" + endMatchScores);
+            //$scope.lines.push("end match scores=" + endMatchScores);
         }
 
         realTimeSimpleService.init({
@@ -73,9 +87,9 @@ angular.module('myApp', ['ngTouch', 'ui.bootstrap'])
             gotEndMatch: gotEndMatch
         });
 
-        function sendEndGame(endMatchScores) {
-            console.log("sending endMatch");
-            realTimeSimpleService.endMatch(endMatchScores);
+        function sendEndGame(finalEndMatchScores) {
+            console.log("sending endMatch:", finalEndMatchScores);
+            realTimeSimpleService.endMatch(finalEndMatchScores);
         }
 
         $scope.startGame = function () {
@@ -83,16 +97,24 @@ angular.module('myApp', ['ngTouch', 'ui.bootstrap'])
         }
 
 
-        $scope.highScore = function () {
-            return $translate("HIGH_SCORE");
-        }
-
-        $scope.lastScore = function () {
-            return $translate("LAST_SCORE");
-        }
-
         $scope.endGame = function (endMatchScores) {
-            gotEndMatch(endMatchScores)
+            //gotEndMatch(endMatchScores);
+            finalEndMatchScores[playerIndex]= endMatchScores;
+            realTimeSimpleService.sendReliableMessage(finalEndMatchScores.toString());
+            console.log("finalEndMatchScores:",finalEndMatchScores);
+
+            if (checkAllGameEnded(finalEndMatchScores)) {
+                sendEndGame(finalEndMatchScores);
+                //finalEndMatchScores = [];
+                //console.log("finalEndMatchScores to zero:",finalEndMatchScores);
+            }
+        }
+
+        function checkAllGameEnded(finalEndMatchScores){
+            for (var i = 0; i <= numOfPlayers - 1; i++){
+                if (finalEndMatchScores[i] === 0){return false;}
+            }
+            return true;
         }
 
         $scope.sendEndGame = function (endMatchScores) {
@@ -104,12 +126,14 @@ angular.module('myApp', ['ngTouch', 'ui.bootstrap'])
             return yourPlayerImage;
         }
 
-        //function randomNumber() {
-        //    var temp = randomService.random(randomCount);
-        //    //$log.info("temp" + temp);
-        //    randomCount++;
-        //    return temp;
-        //}
+
+        $scope.highScore = function () {
+            return $translate("HIGH_SCORE");
+        }
+
+        $scope.lastScore = function () {
+            return $translate("LAST_SCORE");
+        }
 
         var randomCount = 0;
         $scope.random = function () {

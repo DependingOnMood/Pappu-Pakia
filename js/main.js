@@ -155,7 +155,7 @@ mit.main = function ($scope, score) {
     var gameStart = function () {
         gameEnded = 0;
         // Play the awesome music! Really awesome
-        music.play();
+        //music.play();
         flap.pause();
 
         // Hide the Start Screen
@@ -386,10 +386,12 @@ mit.main = function ($scope, score) {
         if (gameEnded === 0) {
             //endMatch Callback
             //var endMatchScores = [];
-            var endMatchScores = [];
-            endMatchScores.push(parseInt(mit.score));
-            scope.endGame(endMatchScores);
-            scope.sendEndGame(endMatchScores);
+            //endMatchScores.push(parseInt(mit.score));
+            //scope.endGame(endMatchScores);
+            //scope.sendEndGame(endMatchScores);
+
+            scope.endGame(parseInt(mit.score));
+
             gameEnded =1;
         }
     };
