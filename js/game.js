@@ -15,10 +15,12 @@ angular.module('myApp', ['ngTouch', 'ui.bootstrap'])
         var numOfPlayers;
         var finalEndMatchScores = [];
         var playerIndex;
+        var randomCount = 0;
 
         function gotStartMatch(params) {
             $log.info("gotStartMatch:", params);
             isOngoing = true;
+            randomCount = 0;
             var yourPlayerIndex = params.yourPlayerIndex;
             var playersInfo = params.playersInfo;
 
@@ -135,9 +137,10 @@ angular.module('myApp', ['ngTouch', 'ui.bootstrap'])
             return $translate("LAST_SCORE");
         }
 
-        var randomCount = 0;
+
         $scope.random = function () {
             //randomNumber();
+
             var temp = randomService.random(randomCount);
             //$log.info("temp" + temp);
             randomCount++;
