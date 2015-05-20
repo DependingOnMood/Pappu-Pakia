@@ -31,7 +31,16 @@
             // Initializing Pappu Sprite, lolzzz..!
             // this.sprite = new Image();
             // this.sprite.src = 'img/pappu.png';
+
+
+            //var scope = angular.element(document.getElementById("mainCtrl")).scope();
+            ////var scope = angular.element($("#mainCtrl")).scope();
+            //var pappuImg = scope.getPlayerImage();
+            //console.log("pappuImg:", pappuImg);
+
             this.sprite = mit.image.pappu;
+            console.log("this.sprite", this.sprite);
+
 
             //pappu.w = pappu.sprite.width;
             mit.Pappu.w = mit.Pappu.sprite.width;
@@ -59,6 +68,18 @@
         },
 
         draw: function (ctx) {
+            var scope = angular.element(document.getElementById("mainCtrl")).scope();
+            var pappuImg = scope.getPlayerImage();
+            console.log("pappuImg:", pappuImg);
+            if (pappuImg === "pappu0.png"){this.sprite= mit.image.pappu0;}
+            else if (pappuImg === "pappu1.png"){this.sprite= mit.image.pappu1;}
+            else if (pappuImg === "pappu2.png"){this.sprite= mit.image.pappu2;}
+            else if (pappuImg === "pappu3.png"){this.sprite= mit.image.pappu3;}
+            else if (pappuImg === "pappu4.png"){this.sprite= mit.image.pappu4;}
+            else if (pappuImg === "pappu5.png"){this.sprite= mit.image.pappu5;}
+            else if (pappuImg === "pappu6.png"){this.sprite= mit.image.pappu6;}
+            else if (pappuImg === "pappu7.png"){this.sprite= mit.image.pappu7;}
+
             var cur_sprite_frame = this.fly_frame_count / this.change_per_frame;
 
             if (utils.isInt(cur_sprite_frame)) {

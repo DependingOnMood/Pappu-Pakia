@@ -27,7 +27,9 @@
         loadFlap,
         loadTing,
     ];
-
+    //var scope = angular.element(document.getElementById("mainCtrl")).scope();
+    //var pappuImg = scope.getPlayerImage();
+    //console.log("pappuImg:", pappuImg);
     var images = {
         angry_pakia: "res/angry_pakia.png",
         backtrees: "res/back_trees.png",
@@ -46,6 +48,16 @@
         happy_pakia: "res/happy_pakia.png",
         log: "res/log.png",
         pappu: "res/pappu.png",
+        pappu0: "res/pappu0.png",
+        pappu1: "res/pappu1.png",
+        pappu2: "res/pappu2.png",
+        pappu3: "res/pappu3.png",
+        pappu4: "res/pappu4.png",
+        pappu5: "res/pappu5.png",
+        pappu6: "res/pappu6.png",
+        pappu7: "res/pappu7.png",
+        //pappu: "res/pappu1.png",
+        //pappu: pappuImg,
         plank_bot: "res/plank_bot.png",
         plank_mid: "res/plank_mid.png",
         plank_top: "res/plank_top.png",

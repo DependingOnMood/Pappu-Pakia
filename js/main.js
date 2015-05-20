@@ -169,6 +169,7 @@ mit.main = function ($scope, score) {
 
         mit.Backgrounds.common_bg_speed = 1;
         mit.Backgrounds.resetAllSpeed();
+        mit.game_started = 0;
 
         // Reset all accelerations and make
         // pappu stationary
@@ -195,6 +196,10 @@ mit.main = function ($scope, score) {
         // Nuke all pakias and cur_pakia
         mit.PakiaUtils.pakias = [];
         mit.PakiaUtils.cur_pakia = false;
+
+        mit.ascend();
+        mit.descend();
+
     };
 
     //ui.start_game.on('mousedown', function () {
@@ -379,9 +384,10 @@ mit.main = function ($scope, score) {
 
         if (gameEnded === 0) {
             //endMatch Callback
-            var endMatchScores = [];
+            //var endMatchScores = [];
+            var endMatchScores = [3];
             endMatchScores.push(parseInt(mit.score));
-            scope.endGame(parseInt(mit.score));
+            scope.endGame(endMatchScores);
             scope.sendEndGame(endMatchScores);
             gameEnded =1;
         }
