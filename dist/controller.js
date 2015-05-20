@@ -11,17 +11,21 @@ angular.module('myApp', ['ngTouch', 'ui.bootstrap'])
 
         $scope.lines = [];
         var isOngoing = false;
+        var yourPlayerImage;//image name for different player
 
         function gotStartMatch(params) {
             $log.info("gotStartMatch:", params);
             isOngoing = true;
             var yourPlayerIndex = params.yourPlayerIndex;
             var playersInfo = params.playersInfo;
-            $scope.lines = [
-                "yourPlayerIndex=" + yourPlayerIndex,
-                "playersInfo:",
-                angular.toJson(playersInfo)
-            ];
+
+            yourPlayerImage = "pappu"+yourPlayerIndex+".png";
+
+            //$scope.lines = [
+            //    "yourPlayerIndex=" + yourPlayerIndex,
+            //    "playersInfo:",
+            //    angular.toJson(playersInfo)
+            //];
 
             $scope.startGame();
             console.log('GameStarted');
@@ -70,7 +74,7 @@ angular.module('myApp', ['ngTouch', 'ui.bootstrap'])
         });
 
         function sendEndGame(endMatchScores) {
-            console.log("sending endMatch")
+            console.log("sending endMatch");
             realTimeSimpleService.endMatch(endMatchScores);
         }
 
@@ -95,7 +99,10 @@ angular.module('myApp', ['ngTouch', 'ui.bootstrap'])
             sendEndGame(endMatchScores);
         }
 
-
+        $scope.getPlayerImage = function (){
+            console.log("getPlayerImage", yourPlayerImage);
+            return yourPlayerImage;
+        }
 
         //function randomNumber() {
         //    var temp = randomService.random(randomCount);
