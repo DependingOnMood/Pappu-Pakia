@@ -37,6 +37,64 @@
 </div>
 
 
+<div class="overlayModal" ng-show="isHelpModalShown" aria-hidden="true">
+    <div class="modal-backdrop in"></div>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" ng-click="isHelpModalShown = false" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">
+                    {{ 'RULES_OF_PAPPU' | translate }}
+                </h4>
+            </div>
+            <div class="modal-body">
+                <carousel style="height: 100px">
+                    <slide>
+                        <table>
+                            <tr>
+                                <td>
+                                    {{ 'RULES_SLIDE1' | translate }}
+                                </td>
+                                <td>
+                                    <img src="imgs/HelpSlide1.png" style="height:70px;">
+                                </td>
+                            </tr>
+                        </table>
+                    </slide>
+                    <slide>
+                        <table>
+                            <tr>
+                                <td>
+                                    {{ 'RULES_SLIDE2' | translate }}
+                                </td>
+                                <td>
+                                    <img src="imgs/HelpSlide2.png" style="height:70px;">
+                                </td>
+                            </tr>
+                        </table>
+                    </slide>
+                    <slide>
+                        <table>
+                            <tr>
+                                <td>
+                                    {{ 'RULES_SLIDE3' | translate }}
+                                </td>
+                                <td>
+                                    <img src="imgs/HelpSlide3.png" style="height:70px;">
+                                </td>
+                            </tr>
+                        </table>
+                    </slide>
+                </carousel>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" ng-click="isHelpModalShown = false">
+                    {{ 'CLOSE' | translate }}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <div id="gameArea">
@@ -158,65 +216,5 @@
 
 
 </div>
-
-<div class="overlayModal" ng-show="isHelpModalShown" aria-hidden="true">
-    <div class="modal-backdrop in"></div>
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" ng-click="isHelpModalShown = false" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">
-                    {{ 'RULES_OF_PAPPU' | translate }}
-                </h4>
-            </div>
-            <div class="modal-body">
-                <carousel style="height: 100px">
-                    <slide>
-                        <table>
-                            <tr>
-                                <td>
-                                    {{ 'RULES_SLIDE1' | translate }}
-                                </td>
-                                <td>
-                                    <img src="imgs/HelpSlide1.png" style="height:70px;">
-                                </td>
-                            </tr>
-                        </table>
-                    </slide>
-                    <slide>
-                        <table>
-                            <tr>
-                                <td>
-                                    {{ 'RULES_SLIDE2' | translate }}
-                                </td>
-                                <td>
-                                    <img src="imgs/HelpSlide2.png" style="height:70px;">
-                                </td>
-                            </tr>
-                        </table>
-                    </slide>
-                    <slide>
-                        <table>
-                            <tr>
-                                <td>
-                                    {{ 'RULES_SLIDE3' | translate }}
-                                </td>
-                                <td>
-                                    <img src="imgs/HelpSlide3.png" style="height:70px;">
-                                </td>
-                            </tr>
-                        </table>
-                    </slide>
-                </carousel>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" ng-click="isHelpModalShown = false">
-                    {{ 'CLOSE' | translate }}
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-
 </body>
 </html>
