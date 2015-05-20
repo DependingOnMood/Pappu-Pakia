@@ -2,6 +2,16 @@
  * Created by Wenzhao on 4/27/15.
  */
 window.angularTranslationsLoaded('en', {
+    "YOUR_SNAKE_COLOR_IS":"Your snake color is {{color}}",
+    "COLOR_SCORE_IS":"{{color}}: {{score}}",
+    "BLUE":"Blue",
+    "RED":"Red",
+    "BROWN":"Brown",
+    "PURPLE":"Purple",
+    "PINK":"Pink",
+    "YELLOW":"Yellow",
+    "ORANGE":"Orange",
+    "SILVER":"Silver",
     "HIGH_SCORE": "High Score: ",
     "LAST_SCORE": "Last Score: ",
     "RULES_OF_PAPPU": "Welcome to Pappu-Pakia!",
