@@ -197,8 +197,8 @@ mit.main = function ($scope, score) {
         mit.PakiaUtils.pakias = [];
         mit.PakiaUtils.cur_pakia = false;
 
-        mit.ascend();
-        mit.descend();
+        //mit.ascend();
+        //mit.descend();
 
     };
 
